@@ -1,8 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 
-# LAB - Class 37
-## Project: Cookie Stand Admin
+# LAB - Class 37/38
+## Project: Cookie Stand Admin v2
 #### Author: Felix A. Taveras
 ## Links and Resources
 ### Learn More
@@ -22,8 +22,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Getting Started
 
-First, run the development server:
 
+
+__install dependencies:__
+
+    npm install
+
+
+__Then, run the development server:__
 ```bash
 npm run dev
 # or
