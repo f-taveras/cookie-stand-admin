@@ -6,7 +6,7 @@ export default function Header() {
         <h1 className="text-4xl">Cookie Stand Admin</h1>
         <nav>
             <Link href="/overview">
-                <a className="px-2 py-1 rounded bg-green-50">Overview</a>
+                {/* <a className="px-2 py-1 rounded bg-green-50">Overview</a> */}
             </Link>
         </nav>
       </header>
