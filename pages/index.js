@@ -132,14 +132,13 @@ function LoginForm({ onLogin }) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <fieldset autoComplete='off'>
-                <legend>Log In</legend>
-                <label htmlFor="username">Username</label>
-                <input name="username" />
-                <label htmlFor="password">Password</label>
-                <input type="password" name="password" />
-                <button>Log In</button>
+        <form onSubmit={handleSubmit} className='container mx-auto'>
+            <fieldset autoComplete='off' className="mx-auto font-bold my-4 bg-green-200 p-10 flex flex-col items-center gap-2">
+                <label htmlFor="username">USER NAME</label>
+                <input name="username" className='w-full' placeholder=' User Name' />
+                <label htmlFor="password">PASSWORD</label>
+                <input type="password" name="password" className='w-full' placeholder=' password'/>
+                <button className='bg-green-500 rounded h-14 mt-7 hover:bg-green-700 w-full'>SIGN IN</button>
             </fieldset>
         </form>
     );
