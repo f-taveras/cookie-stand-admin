@@ -1,20 +1,23 @@
 import Head from 'next/head';
 import { useAuth } from '../contexts/auth';
 import useResource from '../hooks/useResource';
+import Header from "../components/header";
 
 export default function Home() {
 
     const { user, login } = useAuth();
 
     return (
-        <div className="p-4">
+        <div>
             <Head>
                 <title>Cookie Stand Admin</title>
             </Head>
             {user ?
                 <>
-                    <h1>Logged in: {user.email}</h1>
+                    
+                    <Header />
                     <CookieStandAdmin />
+
                 </>
                 :
                 <LoginForm onLogin={login} />
@@ -56,14 +59,42 @@ function CookieStandForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <fieldset>
-                <legend>Create Cookie Stand</legend>
-                <input placeholder='location' name='location' />
-                <input placeholder='minimum' name='minimum' />
-                <input placeholder='maximum' name='maximum' />
-                <input placeholder='average' name='average' />
-                <button>create</button>
+
+
+        <form onSubmit={handleSubmit} className='flex mx-auto '>
+            <fieldset className='bg-green-200 flex flex-row mx-auto m-3 gap-8 p-4 border px-11 rounded-md border-green-500 items-center'>
+
+                <div className='flex flex-col'>
+
+                    <div className='flex flex-col items-center font-bold text-sm'>
+                        <label htmlFor="locations" className=" text-black">ADD LOCATION</label>
+                        <input placeholder='  Cookie Stand Location' name='location' className='h-8 w-full mt-2' />
+                    </div>
+
+                    <div className='flex flex-raw gap-8 mt-4'>
+
+                        <div className='flex flex-col mr-2'>
+                            <label htmlFor="locations" className=" text-black text-xs text-center p-2 font-bold pr-3 pt-4">MINUMUM CUSTOMER PER HOUR</label>
+                            <input placeholder='  0' name='minimum' />
+                        </div>
+
+                        <div className='flex flex-col ml-2'>
+                            <label htmlFor="locations" className=" text-black text-xs text-center p-2 font-bold pr-3 pt-4">MAXIMUM CUSTOMER PER HOUR</label>
+                            <input placeholder='  0' name='maximum' />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div className='flex flex-col items-center '>
+                    <button className='w-full bg-green-500 text-sm rounded-sm my-4 py-3'>CREATE STAND</button>
+                    <label htmlFor="locations" className="  text-black text-xs text-center p-2 font-bold pr-3 pt-4">AVERAGE COOKIES PER SALE</label>
+                    <input placeholder='  0' name='average' className='w-full' />
+                </div>
+
+
+
+
             </fieldset>
         </form>
     );
@@ -137,7 +168,7 @@ function LoginForm({ onLogin }) {
                 <label htmlFor="username">USER NAME</label>
                 <input name="username" className='w-full' placeholder=' User Name' />
                 <label htmlFor="password">PASSWORD</label>
-                <input type="password" name="password" className='w-full' placeholder=' password'/>
+                <input type="password" name="password" className='w-full' placeholder=' password' />
                 <button className='bg-green-500 rounded h-14 mt-7 hover:bg-green-700 w-full'>SIGN IN</button>
             </fieldset>
         </form>
