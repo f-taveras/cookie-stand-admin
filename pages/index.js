@@ -1,39 +1,49 @@
-import Footer from "../components/footer"
-import Head from "next/head"
-import { useState } from "react";
-import Header from "../components/header";
-import CreateForm from "../components/create-form";
-import ReportTable from '../components/report-table';
-import { hours } from '../data.js';
-
+import Head from 'next/head';
+import { useAuth } from '../contexts/auth';
+import useResource from '../hooks/useResource';
+import Header from "../components/Header";
+import LoginForm from "../components/LoginForm";
+import CookieStandForm from "../components/CookieStandForm";
+import CookieStandTable from '@/components/CookieStandTable';
+import Footer from "../components/Footer";
+import FooterRow from "@/components/CookieStandTable";
 
 export default function Home() {
 
-  const [standReports, setStandReports] = useState([]);
+    const { user, login } = useAuth();
 
-  function handleCreate(standInfo){
-    setStandReports([...standReports, standInfo]);
-  }
+    return (
+        <div>
+            <Head>
+                <title>Cookie Stand Admin</title>
+            </Head>
+            {user ?
+                <>
+                    
+                    <Header />
+                    <CookieStandAdmin />
+                    <Footer />
 
-  return (
+                </>
+                :
+                <LoginForm onLogin={login} />
+            }
 
-    <div>
-      <Head>
-        <title>Cookie Stand Admin</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header />
-      <main className="p-8 w-2/3 mx-auto">
-        <CreateForm onCreate={handleCreate} />
-        <ReportTable reports={standReports} hours={hours} />
+        </div>
+    );
+}
 
 
-      </main>
-      <Footer />
-    </div>
+function CookieStandAdmin() {
 
-  )
+    const { resources, deleteResource } = useResource();
 
+    return (
+        <>
+            <CookieStandForm />
+            <CookieStandTable stands={resources || []} deleteStand={deleteResource} />
+        </>
+    );
 }
 
 
