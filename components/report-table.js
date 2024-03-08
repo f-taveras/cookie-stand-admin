@@ -38,7 +38,7 @@ function HeaderRow({ headerValues }) {
                         className = " rounded-tr ";
 
                     }
-                    return <th className="{className} key ={header}">{header}</th>
+                    return <th className={className} key ={header}>{header}</th>
 
                 }
                 )}
