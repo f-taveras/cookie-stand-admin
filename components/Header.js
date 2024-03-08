@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+
 export default function Header({ user, onLogout }) {
     return (
       <header className="flex justify-between p-4 text-gray-800 bg-green-500">
@@ -17,3 +18,4 @@ export default function Header({ user, onLogout }) {
       </header>
     );
 }
+
