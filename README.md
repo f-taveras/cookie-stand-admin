@@ -1,7 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 
-# LAB - Class 37/38
+# LAB - Class 37/38/39
 ## Project: Cookie Stand Admin v2
 #### Author: Felix A. Taveras
 ## Links and Resources
@@ -43,4 +43,4 @@ bun dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
-
+for testing reasons --> username = admin,  password = admin

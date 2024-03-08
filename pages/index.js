@@ -6,7 +6,6 @@ import LoginForm from "../components/LoginForm";
 import CookieStandForm from "../components/CookieStandForm";
 import CookieStandTable from '@/components/CookieStandTable';
 import Footer from "../components/Footer";
-import FooterRow from "@/components/CookieStandTable";
 
 export default function Home() {
 

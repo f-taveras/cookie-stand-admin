@@ -1,4 +1,4 @@
-// components/LoginForm.js
+
 export default function LoginForm({ onLogin }) {
     async function handleSubmit(event) {
         event.preventDefault();
